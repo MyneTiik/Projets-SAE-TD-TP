@@ -1,0 +1,305 @@
+<html>
+
+
+   <head>
+       <meta charset="UTF-8">
+       <link rel="stylesheet" href="SAE-109-pp_css.css">
+       <title>Exercises siami</title>
+  
+   </head>
+
+
+   <body>
+
+
+       <table>
+           <tr>
+               <th>Prénom</th>
+               <th>Age</th>
+               <th>Ville/dpt</th>
+           </tr>
+
+
+           <tr>
+               <td rowspan="2">Théo</td>
+               <td rowspan="2">19</td>
+               <td>MDM</td>
+           </tr>
+
+
+           <tr>
+               <td>40</td>
+           </tr>
+
+
+           <tr>
+               <td rowspan="2" style="background-color: green;">Pierre</td>
+               <td rowspan="2">20</td>
+               <td style="background-image: url(urldelimage); height: 200px; width: 100px;"></td>
+           </tr>
+           <tr>
+               <td>33</td>
+           </tr>
+       </table>
+
+
+       <p style="font-size: 150%;">
+
+
+       </p>
+
+
+       <div class="surmot">
+           <table id="table2">
+               <tr>
+                   <td>
+
+
+                   </td>
+                   <td>
+                       <a href="/home/etudiants/aparnaudeau/Documents/SAE104/siteweb.html" target=“_blank”>Accueil</a>
+                   </td>
+                   <td>
+                      
+                   </td>
+                   <td>
+                       <a href="url" target=“_blank”>Gâteau</a>
+                   </td>
+                   <td>
+                      
+                   </td>
+                   <td>
+                       <a href="https://www.marmiton.org/recettes/index/categorie/gateau/" style="color: red;" target=“_blank”>Recettes</a>
+                   </td>
+                   <td>
+
+
+                   </td>
+               </tr>
+
+
+           </table>
+       </div>
+
+
+       <p style="font-size: 150%;">
+
+
+       </p>
+
+
+
+
+       <div>
+           <table id="table3">
+               <tr>
+                   <td><img src="/home/etudiants/aparnaudeau/Documents/SAE104/csslogo.png">
+                   <img src="/home/etudiants/aparnaudeau/Documents/SAE104/csslogo.png">
+                   <img src="/home/etudiants/aparnaudeau/Documents/SAE104/csslogo.png"></td>
+               </tr>
+           </table>
+       </div>
+
+
+   </body>
+
+
+
+
+</html>
+
+
+
+table, th, td { /* règle de stryle fin de modifier l'entièreté des tables et leurs cellules/colonnes */
+   margin-left: auto; /* marge pour centrer */
+   margin-right: auto; /* idem */
+   border: 1px double black; /* Bordure DOUBLE noire d'un pixel d'épaisseur */
+   text-align: center; /* alignement du texte dans les cellules */
+   width: 50%; /* largeur */
+   font-size: 125%; /* taille de la police */
+}
+
+
+.surmot{
+   color: black;
+   margin: auto;
+}
+
+
+.surmot:hover{ /* hover permet au objets avec le classe surmot de les modifier a survoler */
+   color: red;
+}
+
+
+table#table2 { /* creer un id pour les objets de type table */
+   table-layout: fixed; /* taille fixe du tableau */
+   width: 70%; /* largeur a 70% */
+}
+
+
+#table2 a{ /* affecte les liens affecté par l'id table2 */
+   text-decoration: none; /* enlève le soulignement du lien */
+   display:block;width:100%;height:100%; /* permet a la cellule entière d'etre cliquée */
+   color: black;
+  
+}
+
+
+#table2 a:hover{ /* dans les elements affecté par l'id table2 les lien survolés voit leurs arrières plan devenir rose */
+   background-color: pink;
+}
+
+
+table#table3 {  /* id table3 */
+   margin: auto;
+   table-layout: fixed;
+   width: 80%;
+   height: 35%;
+   border: 1px double black;
+   border-collapse: collapse; /* retire une bordure */
+   border-spacing: 20px;
+   word-spacing: 150px; /* espaces entre les images */
+}
+
+# c’est pour un id
+. c’est pour une classe
+rien c’est pour une balise déjà existante
+
+
+
+
+
+
+
+
+<html>
+   <head>
+       <meta charset="UTF-8">
+       <link rel="stylesheet" href="style.css">
+       <title>Ma première page !</title>
+   </head>
+   <body style="background-image: url('https://media.tenor.com/-rXBouCoLZAAAAAM/kia-sedona.gif');background-repeat: no-repeat;">
+       <h1>Hello world!</h1>
+       <hr size="5" width="60%" align="center" noshade color="red">
+       <h6>texte en h6</h6>
+           <p>paragraphe 1</p>
+           <p>paragraphe 2</p>
+       retour a la ligne<br>
+       deuxieme route<br>
+       a la ligne
+
+
+       <h2 align="right">Hello a droite</h2>
+       <b><i><h2 align="center">Hello au milieu</h2></i></b>
+
+
+       <font size="5">Lorem ipsum dolor <i>set</i> amet consectetur adipisicing elit. Fugit hic voluptates quo natus error! Modi magnam doloremque dignissimos, delectus voluptates nihil incidunt autem atque distinctio molestias labore nobis vitae tempora.</font>
+       <font size="10", color="#9933FF">Lorem ipsum dolor <i>set</i> amet consectetur adipisicing elit. Fugit hic voluptates quo natus error! Modi magnam doloremque dignissimos, delectus voluptates nihil incidunt autem atque distinctio molestias labore nobis vitae tempora.</font>
+      
+       <td>1</td><td>2</td>
+      
+       <form>
+           <select>
+               <option>- de 20 ans</option>
+               <option>de 20 à 40 ans</option>
+               <option>de 40 à 60 ans</option>
+               <option>+ de 60 ans</option>
+           </select>
+       </form>
+
+
+       <form>
+           <input type="submit">
+       </form>
+
+
+       <form>
+           <input type="reset">
+       </form>
+       <p>
+           Nom : <br><input type="text" size="15"><br>
+           Prénom : <br><input type="text" size="15"><br>
+           Adresse : <br><textarea type="text" cols="25" rows="5"></textarea><br>
+           code postal : <br><input type="text" size="5"><br>
+           Ville : <br><input type="text" size="15">
+           <br>
+           <form>
+               <input type="submit">
+               <input type="reset">
+           </form>
+       </p>
+
+
+       <div class="fondjaune", class="tableau", class="tableau2", class="tableau3">
+
+
+               <div class="centrer">
+                  
+                   <h1>Ma premiere page avec du style</h1>
+                   <p>
+                       première page avec du style !
+                   </p>
+               </div>
+          
+          
+           <div class="relative">
+
+
+               <table style="width:15%;border: 1px yellowgreen;">
+
+
+                   <tr>
+                       <td><a href="/home/etudiants/aparnaudeau/Documents/SAE104/siteweb2-20:-41:63:64" style="display:block;width:100%;height:100%;">Home page</a></td>
+                   </tr>
+
+
+                   <tr>
+                       <td>Réflexions</td>
+                   </tr>
+
+
+                   <tr>
+                       <td>Ma ville</td>
+                   </tr>
+
+
+                   <tr>
+                       <td>Liens</td>
+                   </tr>
+
+
+               </table>
+
+
+           </div>
+
+
+
+
+       </div>
+
+
+       <div>
+           <table>
+               <tr>
+                   <td>index 1</td>
+               </tr>
+               <tr>
+                   <td>index 2</td>
+               </tr>
+           </table>
+
+
+       </div>
+
+
+
+
+
+
+   </body>
+
+
+
+
+</html>

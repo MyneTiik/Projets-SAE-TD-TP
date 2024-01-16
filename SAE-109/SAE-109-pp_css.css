@@ -1,0 +1,48 @@
+.fondjaune {
+    background-color: yellowgreen;
+    font-size: 40px;
+ }
+ 
+ 
+ .centrer {
+    font-size: 25px;
+    position: relative;
+    left: 15%;
+    top:15%;
+ 
+ 
+ }
+ 
+ 
+ 
+ 
+ .tableau table, th, td {
+    border: 1px solid white;
+    border-spacing: 10px;
+    border-right: 15px solid black;
+ }
+ 
+ 
+ .tableau2 th, td {
+    background-color: white;
+ }
+ 
+ 
+ .relative{
+    position: relative;
+    left: 0px;
+    top: -130px;
+    margin: 0%;
+ }
+ 
+ 
+ .tableau3 tr, td:hover{
+    background-color: darkorange;
+ }
+ 
+ 
+ a{
+    text-decoration: none;
+    color: black;
+ }
+ 

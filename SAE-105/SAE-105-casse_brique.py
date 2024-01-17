@@ -3,7 +3,7 @@ from tkinter import *
 def deplacement():
     global dx, dy
     if canvas.coords(balle1)[3]>400: #collision_bas
-        label = Label( tk, text="PERDU !")  #Ecran de défaite
+        label = Label( tk, text="PERDU !", font=("arial", 50)  #Ecran de défaite
         label.pack()    #fait apparaitre le texte
         canvas.delete(balle1) #supprime la balle (évite les problèmes)
     if canvas.coords(balle1)[3]<20: #collision_haut

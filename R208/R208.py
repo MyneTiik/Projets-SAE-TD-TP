@@ -154,7 +154,7 @@ def menu_tk(dico):
    add_val.pack()
    
    
-   
+   ##############################NOT FINISHED
    
    
    affmenu.mainloop()

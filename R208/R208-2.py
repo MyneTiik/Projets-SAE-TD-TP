@@ -13,10 +13,11 @@ def afficher(tab):
        print(f'Date de naissance : {tab[i][3][2]}/{tab[i][3][1]}/{tab[i][3][0]} \tNom : {tab[i][0]} - Prenom : {tab[i][1]} (Sexe : {tab[i][2]})')
    print('\n')
 
-def afficher_des_asc(tab):
-   for i in range(len(tab)):
-       print(tab[i])
-   print('\n')
+def create_tab_by_id(tab_reference, tab_funct):
+   temptab = []
+   for i in tab_funct:
+      temptab.append(tab_reference[i])
+   return temptab
 
 
 def cherche_id(tab):
@@ -25,7 +26,7 @@ def cherche_id(tab):
 
 ################################################################################################################################################################
 
-def parents(tab, lien, personne,vide,old=0):
+""" def parents(tab, lien, personne,vide,old=0):
    for i in lien:
       if i[0] == personne:
          if old == 0:
@@ -39,11 +40,20 @@ def parents(tab, lien, personne,vide,old=0):
             
          parents(tab, lien, i[1],vide, old+1)
    vide.sort()
+   return vide """
+   
+def parents(lien, personne,vide):
+   for i in lien:
+      if i[0] == personne:
+         vide.append(i[1])
+         
+         parents(lien, i[1],vide)
+   print(vide)
    return vide
 
 ################################################################################################################################################################
 
-def enfants(tab, lien, personne,vide,old=0):
+""" def enfants(tab, lien, personne,vide,old=0):
    for i in lien:
       if i[1] == personne:
          if old == 0:
@@ -58,7 +68,17 @@ def enfants(tab, lien, personne,vide,old=0):
          enfants(tab, lien, i[0],vide,old+1)
          
    vide.sort()
-   return vide  
+   return vide  """ 
+
+def enfants(lien, personne,tab):
+   for i in lien:
+      if i[1] == personne:
+         tab.append(i[0])
+            
+         enfants(lien, i[0],tab)
+         
+   print(tab)
+   return tab
 
 
 def fraternite(tab, lien, personne) :
@@ -71,12 +91,12 @@ def fraternite(tab, lien, personne) :
    for j in parents_l:
       for k in lien:
          if k[1] == j and k[0] != personne:
-            if tab[k[0]][2] == 'H':
-               print(f'Frère : {tab[k[0]][1]} {tab[k[0]][0]}')
-            if tab[k[0]][2] == 'F':
-               print(f'Soeur : {tab[k[0]][1]} {tab[k[0]][0]}')
-   return ("\n")
+            frat.append(k[0])
             
+            
+   print(frat)
+   return frat
+
 def tri_alph(tab):
    for i in range(len(tab)-1):
       bulle = 0
@@ -90,9 +110,8 @@ def tri_alph(tab):
             bulle = 1
             
       if bulle == 0:
-         break
-      
-   return tab
+         return tab
+
 
 def tri_age(tab):
    for i in range(len(tab)-1):
@@ -103,9 +122,7 @@ def tri_age(tab):
             bulle = 1
             
       if bulle == 0:
-         break
-      
-   return tab    
+         return tab    
                
 tableau = []
 lien_parentee = []
@@ -132,7 +149,7 @@ ascendance(8, 3, lien_parentee)
 #afficher(tableau)
 #cherche_id(tableau)
 
-#print(parents(tableau, lien_parentee, 0))
+print(parents(tableau, lien_parentee, 0))
 #print(enfants(tableau, lien_parentee, 2))
 
 #print(fraternite(tableau,lien_parentee, 0))
@@ -176,8 +193,8 @@ def menu():
          
          idenf = int(input("De qui voulez vous l'ascendance ? (id) "))
          print("\n")
-         form = []
-         afficher_des_asc(parents(tableau, lien_parentee, idenf, form))
+         vide = []
+         afficher(create_tab_by_id(tableau, parents(lien_parentee, idenf, vide)))
          
          choice = str(input("\nA : Trouver l'ascendance \nB : Trouver la Déscendance \nC : Trouver la Fraterie \nD : Tri de tableau (ALPHABETIQUE) \nE : Tri de tableau (CHRONOLOGIQUE) \nQ : Quitter \n"))
           
@@ -187,8 +204,9 @@ def menu():
          
          idpar = int(input("\nDe qui voulez vous la descendance ? (id) "))
          print("\n")
-         form = []
-         afficher_des_asc(enfants(tableau, lien_parentee, idpar, form))
+         
+         vide = []
+         afficher(create_tab_by_id(tableau,enfants(lien_parentee, idpar,vide)))
          
          choice = str(input("\nA : Trouver l'ascendance \nB : Trouver la Déscendance \nC : Trouver la Fraterie \nD : Tri de tableau (ALPHABETIQUE) \nE : Tri de tableau (CHRONOLOGIQUE) \nQ : Quitter \n"))
       
@@ -197,7 +215,7 @@ def menu():
          cherche_id(tableau)
          
          idfr = int(input("\nDe qui voulez vous la fraterie ? (id) "))
-         print(fraternite(tableau,lien_parentee, idfr))
+         afficher(create_tab_by_id(tableau, fraternite(tableau,lien_parentee, idfr)))
 
          choice = str(input("\nA : Trouver l'ascendance \nB : Trouver la Déscendance \nC : Trouver la Fraterie \nD : Tri de tableau (ALPHABETIQUE) \nE : Tri de tableau (CHRONOLOGIQUE) \nQ : Quitter \n"))
 
